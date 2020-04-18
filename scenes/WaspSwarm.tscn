@@ -1,17 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/player_sprite_sheet.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Waterbar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/WaspSwarm.gd" type="Script" id=1]
+[ext_resource path="res://assets/wasps_animated-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.6923, 17.9898 )
+extents = Vector2( 5.51659, 5.14227 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "down"
-length = 3.0
+length = 5.0
 loop = true
-step = 1.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:flip_h")
 tracks/0/interp = 1
@@ -31,10 +30,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3 ]
+"values": [ 0, 1, 2, 3, 4 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -138,18 +137,20 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 50.0
+radius = 39.4103
 
-[node name="Player" type="KinematicBody2D"]
+[node name="WaspSwarm" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.45994, -1.60595 )
+scale = Vector2( 0.835127, 0.913316 )
 texture = ExtResource( 2 )
-hframes = 11
-frame = 1
+hframes = 5
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 9.0
@@ -158,9 +159,6 @@ anims/idle = SubResource( 3 )
 anims/left = SubResource( 4 )
 anims/right = SubResource( 5 )
 anims/up = SubResource( 6 )
-
-[node name="Waterbar" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -50 )
 
 [node name="TickCounter" type="Timer" parent="."]
 wait_time = 0.1
