@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tilesets/outside.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Spigot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Spigot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/LillyOfTheValley.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/WaspSwarm.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
@@ -22,19 +22,16 @@ tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 589824, 13, 0, 589825, 13, 0, 589826, 13, 0, 589827, 13, 0, 589828, 13, 0, 589829, 13, 0, 589830, 13, 0, 589831, 13, 0, 589832, 13, 0, 589833, 13, 0, 589834, 13, 0, 589835, 13, 0, 589836, 13, 0, 589837, 13, 0, 589838, 13, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 153.684, 163.684 )
-
-[node name="Spigot" parent="." instance=ExtResource( 3 )]
+[node name="Spigot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 450, 280 )
 
-[node name="Rose" parent="." instance=ExtResource( 4 )]
+[node name="Rose" parent="." instance=ExtResource( 3 )]
 position = Vector2( 220, 440 )
 
-[node name="BlueBell" parent="." instance=ExtResource( 5 )]
+[node name="BlueBell" parent="." instance=ExtResource( 4 )]
 position = Vector2( 348.421, 381.053 )
 
-[node name="GrapeVine" parent="." instance=ExtResource( 8 )]
+[node name="GrapeVine" parent="." instance=ExtResource( 5 )]
 position = Vector2( 489.155, 427.785 )
 
 [node name="LillyOfTheValley" parent="." instance=ExtResource( 6 )]
@@ -42,6 +39,9 @@ position = Vector2( 368.22, 495.473 )
 
 [node name="RoseBush" parent="." instance=ExtResource( 7 )]
 position = Vector2( 305.948, 465.69 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 153.684, 163.684 )
 
 [node name="WaspSwarm" parent="." instance=ExtResource( 9 )]
 position = Vector2( 684.997, 114.617 )

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 # Player movement speed
 export var speed = 200
+export var water_per_decisecond = 5
 
 var spigot
 
@@ -56,4 +57,4 @@ func _on_TickCounter_timeout():
 				$Waterbar.current_water -= applied_water
 				
 		if by_spigot == true:
-			$Waterbar.current_water += 1
+			$Waterbar.current_water += water_per_decisecond
