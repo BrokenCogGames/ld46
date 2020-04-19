@@ -35,4 +35,5 @@ func _on_TickCounter_timeout():
 		# Check to see if we are attacking a player!
 		if body.name == "Player":
 			print("You've been stung!")
+			body._player_stung()
 

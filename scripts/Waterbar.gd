@@ -20,7 +20,7 @@ func current_water_set(new_value):
 	inside.rect_scale.x = current_water / float(max_water)
 
 func current_water_get():
-    return current_water
+	return current_water
 
 func _ready():
 	inside.rect_scale.x = current_water / float(max_water)

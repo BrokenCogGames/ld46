@@ -5,6 +5,7 @@ export var Radius = 80
 var _centre
 var _angle = 0
 
+
 func _ready():
 	set_process(true)
 	_centre = self.position
@@ -23,4 +24,4 @@ func _on_TickCounter_timeout():
 		# Check to see if we are attacking a player!
 		if body.name == "Player":
 			print("You've been stung!")
-
+			body._player_stung()

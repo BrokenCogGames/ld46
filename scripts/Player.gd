@@ -5,7 +5,13 @@ export var speed = 200
 export var water_per_decisecond = 5
 
 var spigot
+var stung: bool = false
 
+func _ready():
+	#$stung_wait = Timer.new()
+	$stung_wait.connect("timeout", self, "_on_stung_wait_timeout")
+	add_child($stung_wait)
+	
 func _input(event):
 	if event.is_action_released("ui_select"):
 		if spigot:
@@ -14,9 +20,13 @@ func _input(event):
 func _physics_process(delta):
 	# Get player input
 	var direction: Vector2
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
+	if stung == false:
+		direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	elif stung == true:
+		direction.x = 0
+		direction.y = 0
 	if direction.x > 0:
 		$AnimationPlayer.play("right")
 	elif direction.x < 0:
@@ -58,3 +68,11 @@ func _on_TickCounter_timeout():
 				
 		if by_spigot == true:
 			$Waterbar.current_water += water_per_decisecond
+			
+			
+func _player_stung():
+	stung = true
+	$stung_wait.start()
+
+func _on_stung_wait_timeout():
+	stung = false
