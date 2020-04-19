@@ -24,6 +24,10 @@ config/name="ld46"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://assets/plant.png"
 
+[autoload]
+
+MusicController="*res://scenes/MusicController.tscn"
+
 [display]
 
 window/size/width=960
