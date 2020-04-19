@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/outside.tres" type="TileSet" id=2]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Spigot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Spigot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GameoverPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/WinPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://resources/manaspc.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 7 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,6 +22,8 @@ tile_data = PoolIntArray( 65537, 9, 0, 65538, 9, 0, 65539, 9, 0, 65540, 9, 0, 65
 
 [node name="layer_1" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 11, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 13, 11, 0, 14, 11, 0, 65536, 11, 0, 65537, 22, 0, 65538, 17, 0, 65539, 17, 0, 65540, 17, 0, 65541, 17, 0, 65542, 17, 0, 65543, 17, 0, 65544, 17, 0, 65545, 17, 0, 65546, 17, 0, 65547, 17, 0, 65548, 17, 0, 65549, 23, 0, 65550, 11, 0, 131072, 11, 0, 131073, 15, 0, 131085, 19, 0, 131086, 11, 0, 196608, 11, 0, 196609, 15, 0, 196621, 19, 0, 196622, 11, 0, 262144, 11, 0, 262145, 15, 0, 262157, 19, 0, 262158, 11, 0, 327680, 11, 0, 327681, 15, 0, 327693, 19, 0, 327694, 11, 0, 393216, 11, 0, 393217, 15, 0, 393229, 19, 0, 393230, 11, 0, 458752, 11, 0, 458753, 15, 0, 458765, 19, 0, 458766, 11, 0, 524288, 11, 0, 524289, 21, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0, 524295, 13, 0, 524296, 13, 0, 524297, 13, 0, 524298, 13, 0, 524299, 13, 0, 524300, 13, 0, 524301, 20, 0, 524302, 11, 0, 589824, 11, 0, 589825, 11, 0, 589826, 11, 0, 589827, 11, 0, 589828, 11, 0, 589829, 11, 0, 589830, 11, 0, 589831, 11, 0, 589832, 11, 0, 589833, 11, 0, 589834, 11, 0, 589835, 11, 0, 589836, 11, 0, 589837, 11, 0, 589838, 11, 0 )
 
@@ -22,8 +31,29 @@ tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 1
 tile_set = ExtResource( 2 )
 format = 1
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Spigot" parent="." instance=ExtResource( 3 )]
+position = Vector2( 596.952, 283.616 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 388.91, 270.878 )
 
-[node name="Spigot" parent="." instance=ExtResource( 4 )]
-position = Vector2( 596.952, 283.616 )
+[node name="GoalTimer" type="Timer" parent="."]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="GameoverPopup" parent="Canvas" instance=ExtResource( 5 )]
+
+[node name="WinPopup" parent="Canvas" instance=ExtResource( 6 )]
+margin_left = 160.882
+margin_top = 123.273
+margin_right = 808.882
+margin_bottom = 531.273
+
+[node name="TimeRemainingLabel" type="Label" parent="Canvas"]
+margin_left = 14.6255
+margin_top = 30.2959
+margin_right = 207.626
+margin_bottom = 112.296
+custom_fonts/font = SubResource( 1 )
+text = "1:23"
+[connection signal="timeout" from="GoalTimer" to="." method="_on_GoalTimer_timeout"]

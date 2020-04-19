@@ -92,10 +92,10 @@ level = 8
 locked = true
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = 61.3662
-margin_top = 65.7182
-margin_right = 111.366
-margin_bottom = 115.718
+margin_left = 16.4194
+margin_top = 17.0258
+margin_right = 66.4194
+margin_bottom = 67.0258
 toggle_mode = true
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )

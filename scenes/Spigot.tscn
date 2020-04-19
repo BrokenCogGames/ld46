@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/spigot_sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.7349, 32.3483 )
+extents = Vector2( 12.1273, 32.1795 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "running"
@@ -66,7 +66,7 @@ texture = ExtResource( 2 )
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.28749, -0.378307 )
+position = Vector2( 4.12435, -0.0520096 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

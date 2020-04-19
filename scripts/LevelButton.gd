@@ -1,3 +1,4 @@
+class_name LevelButton
 extends TextureButton
 
 export var level: int = 1

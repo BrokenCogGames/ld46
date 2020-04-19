@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/GameoverPopup.gd" type="Script" id=1]
+[ext_resource path="res://assets/gameover_popup.png" type="Texture" id=2]
+[ext_resource path="res://assets/play-again-button.png" type="Texture" id=3]
+[ext_resource path="res://assets/play-again-button-clicked.png" type="Texture" id=4]
+[ext_resource path="res://assets/main-menu-button.png" type="Texture" id=5]
+[ext_resource path="res://assets/main-menu-button-clicked.png" type="Texture" id=6]
+
+[node name="GameoverPopup" type="PopupPanel"]
+pause_mode = 2
+margin_left = 164.735
+margin_top = 121.428
+margin_right = 812.735
+margin_bottom = 529.428
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 644.0
+margin_bottom = 404.0
+texture = ExtResource( 2 )
+
+[node name="PlayAgainButton" type="TextureButton" parent="TextureRect"]
+margin_left = 154.0
+margin_top = 214.0
+margin_right = 514.0
+margin_bottom = 274.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="MainMenuButton" type="TextureButton" parent="TextureRect"]
+margin_left = 153.727
+margin_top = 288.134
+margin_right = 513.727
+margin_bottom = 348.134
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+[connection signal="pressed" from="TextureRect/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
+[connection signal="pressed" from="TextureRect/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player_sprite_sheet.png" type="Texture" id=2]
@@ -61,6 +61,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 30 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("WaterDetectArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.00729942, 3.86393 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -129,6 +141,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -15, 12 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("WaterDetectArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.340012, 12.751 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 3.0
@@ -182,6 +206,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 15, 12 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("WaterDetectArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.340012, 12.751 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 3.0
@@ -234,6 +270,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, -18 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("WaterDetectArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.02007, 36.7228 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 2.55962, 4.15707 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -245,7 +296,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 11
-frame = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 9.0
@@ -257,6 +308,8 @@ anims/up = SubResource( 6 )
 
 [node name="Waterbar" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -50 )
+z_index = 1
+max_water = 150
 
 [node name="TickCounter" type="Timer" parent="."]
 wait_time = 0.1
@@ -265,11 +318,21 @@ autostart = true
 [node name="DetectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
-position = Vector2( 0, -18 )
+position = Vector2( 0, 30 )
 shape = ExtResource( 3 )
 
 [node name="stung_wait" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="WaterDetectArea" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetectArea"]
+position = Vector2( -0.00729942, 3.86393 )
+shape = SubResource( 7 )
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
 [connection signal="timeout" from="stung_wait" to="." method="_on_stung_wait_timeout"]
+[connection signal="body_entered" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_entered"]
+[connection signal="body_exited" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_exited"]
