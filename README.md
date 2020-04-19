@@ -1,6 +1,6 @@
 # LD46
 ## Overview
-The goal of \<Insert game name here\> is to keep your plants alive! This can be done by watering your plants, but be careful, there are bugs and other obsticals standing in your way. 
+The goal of Botanist Blitz is to keep your plants alive! This can be done by watering your plants, but be careful, there are bugs and other obsticals standing in your way. 
 ### Project Goals
 #### Must Haves
 - Play through 5 unique levels with different plants, enemys (bugs), and terrain.
