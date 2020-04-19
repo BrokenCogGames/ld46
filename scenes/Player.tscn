@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player_sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://resources/down_player_collider.tres" type="Shape2D" id=3]
 [ext_resource path="res://resources/right_player_collider.tres" type="Shape2D" id=4]
 [ext_resource path="res://scenes/Waterbar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/water-wateringcan.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.6923, 17.9898 )
@@ -287,7 +288,7 @@ tracks/4/keys = {
 extents = Vector2( 2.55962, 4.15707 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 24.496, 32.8816 )
+extents = Vector2( 24.496, 36.6741 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -339,8 +340,14 @@ shape = SubResource( 7 )
 [node name="SquishArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquishArea"]
+position = Vector2( 0, 6.66511 )
 shape = SubResource( 8 )
+
+[node name="WateringSoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = 0.5
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
+[connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
 [connection signal="timeout" from="stung_wait" to="." method="_on_stung_wait_timeout"]
 [connection signal="body_entered" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_entered"]
 [connection signal="body_exited" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_exited"]

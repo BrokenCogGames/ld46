@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Spigot.gd" type="Script" id=1]
 [ext_resource path="res://assets/spigot_sheet.png" type="Texture" id=2]
+[ext_resource path="res://sounds/water-start.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/water-running.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/water-stop.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.1273, 32.1795 )
@@ -43,8 +46,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "stop"
-length = 5.0
-step = 1.0
+length = 7.5
+step = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -52,7 +55,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 4, 3, 2, 0 ]
@@ -64,7 +67,6 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 10
-frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4.12435, -0.0520096 )
@@ -75,3 +77,15 @@ playback_speed = 7.0
 anims/running = SubResource( 2 )
 anims/start = SubResource( 3 )
 anims/stop = SubResource( 4 )
+
+[node name="WaterStartSoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 0.5
+
+[node name="WaterRunningSoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 0.5
+
+[node name="WaterStopSoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = 0.5
