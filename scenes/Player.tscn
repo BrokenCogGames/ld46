@@ -308,6 +308,8 @@ anims/up = SubResource( 6 )
 
 [node name="Waterbar" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -50 )
+z_index = 1
+max_water = 150
 
 [node name="TickCounter" type="Timer" parent="."]
 wait_time = 0.1

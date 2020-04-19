@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureButton",
+"class": "LevelButton",
+"language": "GDScript",
+"path": "res://scripts/LevelButton.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Plant",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://scripts/Raft.gd"
 } ]
 _global_script_class_icons={
+"LevelButton": "",
 "Plant": "",
 "Raft": ""
 }
@@ -33,6 +39,7 @@ config/icon="res://assets/plant.png"
 [autoload]
 
 MusicController="*res://scenes/MusicController.tscn"
+LevelManager="*res://scripts/LevelManager.gd"
 
 [display]
 

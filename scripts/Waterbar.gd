@@ -7,7 +7,8 @@ export(int) var max_water = 100 setget max_water_set, max_water_get
 
 func max_water_set(new_value):
 	max_water = new_value
-	inside.rect_scale.x = current_water / float(max_water)
+	if inside:
+		inside.rect_scale.x = current_water / float(max_water)
 	
 func max_water_get():
 	return max_water
