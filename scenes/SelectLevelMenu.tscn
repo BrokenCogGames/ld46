@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/SelectLevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/main_background.png" type="Texture" id=2]
 [ext_resource path="res://assets/select-level-label.png" type="Texture" id=3]
 [ext_resource path="res://scenes/LevelButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/back-button.png" type="Texture" id=5]
-[ext_resource path="res://assets/back-button-clicked.png" type="Texture" id=6]
+[ext_resource path="res://assets/level-2.png" type="Texture" id=5]
+[ext_resource path="res://assets/level-2-clicked.png" type="Texture" id=6]
+[ext_resource path="res://assets/level-3.png" type="Texture" id=7]
+[ext_resource path="res://assets/level-3-clicked.png" type="Texture" id=8]
+[ext_resource path="res://assets/back-button.png" type="Texture" id=9]
+[ext_resource path="res://assets/back-button-clicked.png" type="Texture" id=10]
 
 [node name="SelectLevelMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,10 +27,10 @@ margin_bottom = 120.886
 texture = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 70.0
-margin_top = 170.0
-margin_right = 870.0
-margin_bottom = 570.0
+margin_left = 65.0059
+margin_top = 167.503
+margin_right = 865.006
+margin_bottom = 567.503
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer"]
 margin_left = 34.0
@@ -40,14 +44,16 @@ columns = 4
 [node name="LevelButton" parent="CenterContainer/GridContainer" instance=ExtResource( 4 )]
 margin_left = 184.0
 margin_right = 364.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 level = 2
-locked = true
 
 [node name="LevelButton3" parent="CenterContainer/GridContainer" instance=ExtResource( 4 )]
 margin_left = 368.0
 margin_right = 548.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 level = 3
-locked = true
 
 [node name="LevelButton2" parent="CenterContainer/GridContainer" instance=ExtResource( 4 )]
 margin_left = 552.0
@@ -91,6 +97,6 @@ margin_top = 65.7182
 margin_right = 111.366
 margin_bottom = 115.718
 toggle_mode = true
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
