@@ -15,6 +15,7 @@ func _input(event):
 	if event.is_action_released("ui_select"):
 		if spigot:
 			spigot.stop()
+		$WateringSoundFX.stop()
 
 func _physics_process(delta):
 	# Get player input
@@ -71,6 +72,8 @@ func _on_TickCounter_timeout():
 				var applied_water = min($Waterbar.current_water, 5)
 				plant.add_water(applied_water)
 				$Waterbar.current_water -= applied_water
+				if $WateringSoundFX.playing == false:
+					$WateringSoundFX.play()
 				
 		if by_spigot == true:
 			$Waterbar.current_water += water_per_decisecond

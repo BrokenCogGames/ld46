@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player_sprite_sheet.png" type="Texture" id=2]
 [ext_resource path="res://resources/down_player_collider.tres" type="Shape2D" id=3]
 [ext_resource path="res://resources/right_player_collider.tres" type="Shape2D" id=4]
 [ext_resource path="res://scenes/Waterbar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/water-wateringcan.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.6923, 17.9898 )
@@ -332,6 +333,10 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetectArea"]
 position = Vector2( -0.00729942, 3.86393 )
 shape = SubResource( 7 )
+
+[node name="WateringSoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = 0.5
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
 [connection signal="timeout" from="stung_wait" to="." method="_on_stung_wait_timeout"]
 [connection signal="body_entered" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_entered"]
