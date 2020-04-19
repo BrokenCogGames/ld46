@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Player movement speed
-export var speed = 200
+export var speed = 100
 
 var closest_flower: Vector2
 
@@ -10,11 +10,12 @@ func _physics_process(delta):
 	var direction: Vector2
 	$AnimationPlayer.play("down")
 
-	direction = (closest_flower - position).normalized()
-	
+	if closest_flower != Vector2(0, 0):
+		direction = (closest_flower - position).normalized()
 	# Apply movement
 	var movement = speed * direction * delta
-	move_and_collide(movement)
+	if closest_flower != Vector2(0, 0):
+		move_and_collide(movement)
 
 func _on_TickCounter_timeout():
 	var bodies = $DetectArea.get_overlapping_bodies()
@@ -32,8 +33,8 @@ func _on_TickCounter_timeout():
 			var distance_to = body.position.distance_to(position)
 			if distance_to < current_closest_flower.distance_to(position):
 				current_closest_flower = body.position
-	
-	self.closest_flower = current_closest_flower
+	if current_closest_flower != null:
+		self.closest_flower = current_closest_flower
 
 
 func _on_Timer_timeout():

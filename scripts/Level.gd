@@ -9,6 +9,10 @@ func _ready():
 	$GoalTimer.wait_time = goal_time
 	$GoalTimer.start()
 
+var aphid_tick_count = 0
+
+var aphid_spawn_table = [{"spawn_position": Vector2(0,0), "tick_count": 0}]
+
 func _input(event):
 	if event.is_action_released("ui_cancel"):
 		get_tree().change_scene("res://scenes/SelectLevelMenu.tscn")
@@ -53,3 +57,4 @@ func _on_GoalTimer_timeout():
 		beat_game()
 	else:
 		win()
+
