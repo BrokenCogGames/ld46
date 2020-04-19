@@ -6,6 +6,7 @@ var alive: bool = true
 
 func _ready():
 	$Waterbar.current_water = $Waterbar.max_water
+	$AnimationPlayer.play("idle")
 
 func _on_Timer_timeout():
 	drain_water(drain_per_tick)
