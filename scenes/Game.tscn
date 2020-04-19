@@ -9,8 +9,8 @@
 [ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/WaspSwarmRandom.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Sunflower.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/WaspSwarmCircle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/WaspSwarmCircle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Sunflower.tscn" type="PackedScene" id=11]
 
 [node name="Game" type="Node2D"]
 
@@ -40,9 +40,9 @@ position = Vector2( 153.684, 163.684 )
 [node name="WaspSwarmRandom" parent="." instance=ExtResource( 9 )]
 position = Vector2( 684.997, 114.617 )
 
-[node name="WaspSwarmCircle" parent="." instance=ExtResource( 11 )]
+[node name="WaspSwarmCircle" parent="." instance=ExtResource( 10 )]
 position = Vector2( 457.301, 85.3003 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Sunflower" parent="." instance=ExtResource( 10 )]
+[node name="Sunflower" parent="." instance=ExtResource( 11 )]
 position = Vector2( 589.002, 493.001 )
