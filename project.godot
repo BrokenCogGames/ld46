@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Plant",
 "language": "GDScript",
 "path": "res://scripts/Plant.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Raft",
+"language": "GDScript",
+"path": "res://scripts/Raft.gd"
 } ]
 _global_script_class_icons={
-"Plant": ""
+"Plant": "",
+"Raft": ""
 }
 
 [application]

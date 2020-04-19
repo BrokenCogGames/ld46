@@ -1,0 +1,2 @@
+class_name Raft
+extends KinematicBody2D

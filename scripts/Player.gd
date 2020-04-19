@@ -6,7 +6,10 @@ export var water_per_decisecond = 5
 
 var spigot
 var stung: bool = false
-	
+var in_water: bool = false
+var on_raft: bool = false
+var alive: bool = true
+
 func _input(event):
 	if event.is_action_released("ui_select"):
 		if spigot:
@@ -63,7 +66,10 @@ func _on_TickCounter_timeout():
 				
 		if by_spigot == true:
 			$Waterbar.current_water += water_per_decisecond
-			
+	
+	if in_water == true and on_raft == false and alive == true:
+		print("DROWN!")
+		alive = false
 			
 func _player_stung():
 	stung = true
@@ -71,3 +77,17 @@ func _player_stung():
 
 func _on_stung_wait_timeout():
 	stung = false
+
+func _on_WaterDetectArea_body_entered(body):
+	var raft := body as Raft
+	if raft != null:
+		on_raft = true
+	if body.name == "layer_1":
+		in_water = true
+
+func _on_WaterDetectArea_body_exited(body):
+	var raft := body as Raft
+	if raft != null:
+		on_raft = false
+	if body.name == "layer_1":
+		in_water = false
