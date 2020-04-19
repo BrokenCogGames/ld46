@@ -41,5 +41,4 @@ func _on_Timer_timeout():
 	for body in bodies:
 		var plant := body as Plant
 		if plant != null:
-			print("draining")
 			plant.drain_water(plant.drain_per_tick)
