@@ -18,14 +18,20 @@ goal_time = 30
 level = 1
 song = 1
 
-[node name="AphidSwarm" parent="." index="3" instance=ExtResource( 3 )]
+[node name="layer_0_1" type="TileMap" parent="." index="1"]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( 262152, 41, 0, 262153, 44, 0, 262154, 44, 0, 262155, 45, 0, 327684, 41, 0, 327685, 44, 0, 327686, 44, 0, 327687, 44, 0, 327688, 49, 0, 327689, 10, 0, 327690, 10, 0, 327691, 51, 0, 327692, 45, 0, 393220, 42, 0, 393221, 10, 0, 393222, 52, 0, 393223, 48, 0, 393224, 48, 0, 393225, 48, 0, 393226, 50, 0, 393227, 10, 0, 393228, 51, 0, 393229, 45, 0, 458756, 42, 0, 458757, 10, 0, 458758, 46, 0, 458762, 43, 0, 458763, 50, 0, 458764, 10, 0, 458765, 46, 0, 524292, 43, 0, 524293, 48, 0, 524294, 47, 0, 524299, 43, 0, 524300, 48, 0, 524301, 47, 0 )
+
+[node name="AphidSwarm" parent="." index="4" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 469.111, 257.882 )
 
-[node name="RoseBush" parent="." index="4" instance=ExtResource( 4 )]
+[node name="RoseBush" parent="." index="5" instance=ExtResource( 5 )]
 position = Vector2( 228.421, 431.368 )
 drain_per_tick = 5
 
-[node name="RoseBush2" parent="." index="5" instance=ExtResource( 4 )]
+[node name="RoseBush2" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 220.779, 172.377 )
 
 [node name="Sunflower" parent="." index="6" instance=ExtResource( 5 )]
