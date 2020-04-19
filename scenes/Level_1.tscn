@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Level_1.gd" type="Script" id=2]
 [ext_resource path="res://scenes/AphidSwarm.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/WaspSwarmRandom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=6]
 
 [node name="Level_1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -35,3 +36,7 @@ margin_left = 165.27
 margin_top = 118.324
 margin_right = 813.27
 margin_bottom = 526.324
+
+[node name="Skull" parent="." index="11" instance=ExtResource( 6 )]
+position = Vector2( 921.271, 300.823 )
+scale = Vector2( 0.75, 0.75 )
