@@ -170,16 +170,19 @@ autostart = true
 [node name="DetectArea" type="Area2D" parent="."]
 
 [node name="DetectAreaCollision2D" type="CollisionShape2D" parent="DetectArea"]
+visible = false
 position = Vector2( -2.61613, 3.32959 )
 shape = SubResource( 6 )
 
 [node name="PlantDrainArea" type="Area2D" parent="."]
 
 [node name="PlantDrainCollision2D" type="CollisionShape2D" parent="PlantDrainArea"]
+visible = false
 position = Vector2( -1.94259, 3.14712 )
 shape = SubResource( 7 )
 
 [node name="AphidSwarmCollision2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -3.15561, 3.32169 )
 shape = SubResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
