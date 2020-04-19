@@ -269,6 +269,7 @@ position = Vector2( 0, -18 )
 shape = ExtResource( 3 )
 
 [node name="stung_wait" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
 [connection signal="timeout" from="stung_wait" to="." method="_on_stung_wait_timeout"]
