@@ -3,9 +3,10 @@ extends Node2D
 # Goal time in seconds
 export var goal_time: int = 60
 export var level: int = 0
+export var song: int = 0
 
 func _ready():
-	MusicController.set_song_for_remaining_time(goal_time, true)
+	MusicController.set_song_for_remaining_time(goal_time, song, true)
 	$GoalTimer.wait_time = goal_time
 	$GoalTimer.start()
 
@@ -54,7 +55,7 @@ func _process(delta):
 		
 	# Update timer
 	$Canvas/TimeRemainingLabel.text = get_time_remaining()
-	MusicController.set_song_for_remaining_time($GoalTimer.time_left)
+	MusicController.set_song_for_remaining_time($GoalTimer.time_left, song)
 	
 	var children = get_children()
 	for child in children:

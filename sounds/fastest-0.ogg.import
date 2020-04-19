@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fastest-0.ogg-fd9eb3f416233c3c54100693f878752c.oggstr"
+
+[deps]
+
+source_file="res://sounds/fastest-0.ogg"
+dest_files=[ "res://.import/fastest-0.ogg-fd9eb3f416233c3c54100693f878752c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,10 +7,11 @@
 [ext_resource path="res://scenes/WaspSwarmRandom.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=6]
 
-[node name="Level_1" instance=ExtResource( 1 )]
+[node name="Level_1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 goal_time = 30
 level = 1
+song = 1
 
 [node name="AphidSwarm" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 469.111, 257.882 )
