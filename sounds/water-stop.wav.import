@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water-stop.wav-9bada287d873ca4f438508807c2bb816.sample"
+
+[deps]
+
+source_file="res://sounds/water-stop.wav"
+dest_files=[ "res://.import/water-stop.wav-9bada287d873ca4f438508807c2bb816.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
