@@ -6,11 +6,6 @@ export var water_per_decisecond = 5
 
 var spigot
 var stung: bool = false
-
-func _ready():
-	#$stung_wait = Timer.new()
-	$stung_wait.connect("timeout", self, "_on_stung_wait_timeout")
-	add_child($stung_wait)
 	
 func _input(event):
 	if event.is_action_released("ui_select"):
