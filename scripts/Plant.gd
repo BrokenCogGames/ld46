@@ -7,9 +7,12 @@ func _ready():
 	$Waterbar.current_water = $Waterbar.max_water
 
 func _on_Timer_timeout():
-	$Waterbar.current_water -= drain_per_tick
-	if $Waterbar.current_water <= 0:
-		print("IM DEAD!")
+	drain_water(drain_per_tick)
 
 func add_water(water: float):
 	$Waterbar.current_water += water
+	
+func drain_water(water: float):
+	$Waterbar.current_water -= drain_per_tick
+	if $Waterbar.current_water <= 0:
+		print("IM DEAD!")
