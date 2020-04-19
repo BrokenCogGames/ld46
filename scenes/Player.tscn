@@ -288,7 +288,7 @@ tracks/4/keys = {
 extents = Vector2( 2.55962, 4.15707 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 24.496, 36.6741 )
+extents = Vector2( 28.0485, 39.6613 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -340,7 +340,7 @@ shape = SubResource( 7 )
 [node name="SquishArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquishArea"]
-position = Vector2( 0, 6.66511 )
+position = Vector2( 0, 7.22723 )
 shape = SubResource( 8 )
 
 [node name="WateringSoundFX" type="AudioStreamPlayer2D" parent="."]

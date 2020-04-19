@@ -133,13 +133,13 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=6]
 radius = 1208.3
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 23.8286
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=8]
 radius = 3.76623
 
 [node name="AphidSwarm" type="KinematicBody2D"]
@@ -171,7 +171,7 @@ autostart = true
 
 [node name="DetectAreaCollision2D" type="CollisionShape2D" parent="DetectArea"]
 position = Vector2( -2.61613, 3.32959 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="PlantDrainArea" type="Area2D" parent="."]
 
@@ -181,6 +181,6 @@ shape = SubResource( 7 )
 
 [node name="AphidSwarmCollision2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.15561, 3.32169 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
