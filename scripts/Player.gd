@@ -78,7 +78,13 @@ func _on_TickCounter_timeout():
 	if in_water == true and on_raft == false and alive == true:
 		print("You drowned")
 		alive = false
-			
+	
+	var bodies = $SquishArea.get_overlapping_bodies()
+	for body in bodies:
+		# Check to see if we are by a spigot
+		if body.name == "AphidSwarm":
+			body.queue_free()
+	
 func _player_stung():
 	if stung == false:
 		stung = true
