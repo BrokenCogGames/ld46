@@ -66,8 +66,9 @@ func _on_TickCounter_timeout():
 			
 			
 func _player_stung():
-	stung = true
-	$stung_wait.start()
+	if stung == false:
+		stung = true
+		$stung_wait.start()
 
 func _on_stung_wait_timeout():
 	stung = false
