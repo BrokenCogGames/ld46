@@ -54,6 +54,7 @@ func play():
 # Calling this function will load the given track, and play it
 func play_track(track_url : String):
 	var track = load(track_url)
+	_player.set_volume_db(-10) 
 	_player.stream = track
 	self.play()
 

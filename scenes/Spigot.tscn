@@ -81,12 +81,12 @@ anims/stop = SubResource( 4 )
 
 [node name="WaterStartSoundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = 0.5
+volume_db = -20.0
 
 [node name="WaterRunningSoundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-volume_db = 0.5
+volume_db = -20.0
 
 [node name="WaterStopSoundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-volume_db = 0.5
+volume_db = -20.0
