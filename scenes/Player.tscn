@@ -346,8 +346,11 @@ shape = SubResource( 8 )
 [node name="WateringSoundFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 volume_db = 0.5
+
+[node name="StungInvincibility" type="Timer" parent="."]
 [connection signal="timeout" from="TickCounter" to="." method="_on_TickCounter_timeout"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
 [connection signal="timeout" from="stung_wait" to="." method="_on_stung_wait_timeout"]
 [connection signal="body_entered" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_entered"]
 [connection signal="body_exited" from="WaterDetectArea" to="." method="_on_WaterDetectArea_body_exited"]
+[connection signal="timeout" from="StungInvincibility" to="." method="_on_StungInvincibility_timeout"]

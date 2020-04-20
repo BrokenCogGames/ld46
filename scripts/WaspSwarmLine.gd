@@ -38,7 +38,6 @@ func _physics_process(delta):
 	
 	# Apply movement
 	var movement = speed * direction * delta
-	print(self.position)
 	move_and_collide(movement)
 
 func _on_TickCounter_timeout():
