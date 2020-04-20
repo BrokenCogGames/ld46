@@ -66,27 +66,27 @@ position = Vector2( 880.067, 85.0977 )
 [node name="Spigot" parent="." index="15"]
 position = Vector2( 550.415, 299.129 )
 
-[node name="RaftSpawner" parent="." index="16" instance=ExtResource( 9 )]
-start_position = Vector2( 287, -70 )
-end_position = Vector2( 287, 709 )
-speed = 80.0
-
-[node name="RaftSpawner2" parent="." index="17" instance=ExtResource( 9 )]
-start_position = Vector2( 737, 710 )
-end_position = Vector2( 737, -70 )
-speed = 80.0
-
-[node name="Player" parent="." index="18"]
-position = Vector2( 483.093, 291.931 )
-
-[node name="WaspSwarmCircle" parent="." index="22" instance=ExtResource( 10 )]
+[node name="WaspSwarmCircle" parent="." index="16" instance=ExtResource( 10 )]
 position = Vector2( 743.248, 313.221 )
 scale = Vector2( 0.5, 0.5 )
 RotateSpeed = 1.75
 Radius = 125
 
-[node name="WaspSwarmCircle2" parent="." index="23" instance=ExtResource( 10 )]
+[node name="WaspSwarmCircle2" parent="." index="17" instance=ExtResource( 10 )]
 position = Vector2( 241.717, 315.554 )
 scale = Vector2( 0.5, 0.5 )
 RotateSpeed = 1.75
 Radius = 125
+
+[node name="RaftSpawner" parent="." index="18" instance=ExtResource( 9 )]
+start_position = Vector2( 287, -70 )
+end_position = Vector2( 287, 709 )
+speed = 80.0
+
+[node name="RaftSpawner2" parent="." index="19" instance=ExtResource( 9 )]
+start_position = Vector2( 737, 710 )
+end_position = Vector2( 737, -70 )
+speed = 80.0
+
+[node name="Player" parent="." index="20"]
+position = Vector2( 483.093, 291.931 )

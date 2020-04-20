@@ -64,17 +64,17 @@ start_position = Vector2( -300, 358 )
 end_position = Vector2( 1036, 358 )
 speed = 160.0
 
-[node name="Spigot" parent="." index="15"]
-position = Vector2( 197.898, 495.13 )
-
-[node name="Player" parent="." index="16"]
-position = Vector2( 113.105, 489.432 )
-
-[node name="RoseBush" parent="." index="20" instance=ExtResource( 5 )]
+[node name="RoseBush" parent="." index="15" instance=ExtResource( 5 )]
 position = Vector2( 306.092, 110.85 )
 
-[node name="RoseBush2" parent="." index="21" instance=ExtResource( 5 )]
+[node name="RoseBush2" parent="." index="16" instance=ExtResource( 5 )]
 position = Vector2( 748.572, 107.986 )
 
-[node name="RoseBush3" parent="." index="22" instance=ExtResource( 5 )]
+[node name="RoseBush3" parent="." index="17" instance=ExtResource( 5 )]
 position = Vector2( 652.63, 567.65 )
+
+[node name="Spigot" parent="." index="18"]
+position = Vector2( 197.898, 495.13 )
+
+[node name="Player" parent="." index="19"]
+position = Vector2( 113.105, 489.432 )
