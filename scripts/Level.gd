@@ -23,7 +23,7 @@ func win():
 	var next_level = level+1
 	LevelManager.unlocked_levels = next_level
 	$Canvas/WinPopup.next_level = next_level
-	$Canvas/WinPopup.popup()
+	$Canvas/WinPopup.show()
 
 func beat_game():
 	pass
@@ -41,7 +41,7 @@ func _on_AphidSpawnTimer_timeout():
 
 func gameover():
 	get_tree().paused = true
-	$Canvas/GameoverPopup.popup()
+	$Canvas/GameoverPopup.show()
 
 func get_time_remaining():
 	var sec_left = $GoalTimer.time_left
