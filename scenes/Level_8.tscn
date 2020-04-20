@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/RaftSpawner.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/WaspSwarmCircle.tscn" type="PackedScene" id=10]
 
-[node name="Level_8" index="0" instance=ExtResource( 1 )]
+[node name="Level_8" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 level = 8
 
