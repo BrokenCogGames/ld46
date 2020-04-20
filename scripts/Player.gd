@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-# Player movement speed
-export var speed = 200
 export var water_per_decisecond = 5
 
 var spigot
@@ -12,9 +10,10 @@ var alive: bool = true
 var raft_entity: Raft = null
 var invincible: bool = false
 
-export var deceleration = 5
-export var acceleration = 1
-export var top_speed = 50
+# Player movement speed
+export var deceleration = .5
+export var acceleration = .8
+export var top_speed = 3
 
 var current_velocity = Vector2()
 var current_direction_x = 0
@@ -88,8 +87,8 @@ func _physics_process(delta):
 		direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	elif stung == true:
-		direction.x = 0
-		direction.y = 0
+		current_velocity.x = 0
+		current_velocity.y = 0
 	if direction.x > 0:
 		$AnimationPlayer.play("right")
 	elif direction.x < 0:
@@ -106,9 +105,7 @@ func _physics_process(delta):
 	if position.x < 0 or position.x > get_viewport_rect().size.x or position.y < 0 or position.y > get_viewport_rect().size.y:
 		print("You left map")
 		alive = false
-	
-	if raft_entity != null:
-		current_velocity += raft_entity.velocity
+
 	move_and_collide(current_velocity)
 
 func _on_TickCounter_timeout():
