@@ -11,6 +11,7 @@ var raft_entity: Raft = null
 var invincible: bool = false
 var in_water_counter: int = 0
 var in_water_max_count: int = 4
+var drowning: bool = false
 
 # Player movement speed
 export var deceleration = 3
@@ -89,6 +90,9 @@ func _physics_process(delta):
 	# Get player input
 	var direction: Vector2
 	
+	if drowning == true:
+		return
+	
 	input()
 	
 	if stung == false:
@@ -150,10 +154,15 @@ func _on_TickCounter_timeout():
 		if by_spigot == true:
 			$Waterbar.current_water += water_per_decisecond
 	
-	if in_water == true and on_raft == false and alive == true:
+	if in_water == true and on_raft == false and alive == true and drowning == false:
 		in_water_counter += 1
 		if in_water_counter >= in_water_max_count:
+			drowning = true
+			$Drowning.visible = true
+			$DrowningSoundFX.play()
+			yield($DrowningSoundFX, "finished")
 			alive = false
+
 	else:
 		in_water_counter = 0
 	

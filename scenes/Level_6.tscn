@@ -3,11 +3,11 @@
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/outside.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/RaftSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/RaftSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=8]
 
 [node name="Level_6" instance=ExtResource( 1 )]
 level = 6
@@ -29,26 +29,26 @@ tile_data = PoolIntArray( 11, 37, 0, 393217, 39, 0, 393218, 40, 0, 393226, 37, 0
 [node name="Rose" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 875.316, 104.807 )
 
-[node name="GrapeVine" parent="." index="5" instance=ExtResource( 5 )]
+[node name="GrapeVine" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 142.55, 139.7 )
 
 [node name="Spigot" parent="." index="6"]
 position = Vector2( 902.623, 473.231 )
 
-[node name="RaftSpawner" parent="." index="7" instance=ExtResource( 6 )]
+[node name="RaftSpawner" parent="." index="7" instance=ExtResource( 5 )]
 start_position = Vector2( 351, -75 )
 end_position = Vector2( 351, 723 )
 
-[node name="grass" parent="." index="8" instance=ExtResource( 8 )]
+[node name="grass" parent="." index="8" instance=ExtResource( 6 )]
 position = Vector2( 79.8403, 221.112 )
 
-[node name="grass2" parent="." index="9" instance=ExtResource( 8 )]
+[node name="grass2" parent="." index="9" instance=ExtResource( 6 )]
 position = Vector2( 560.983, 75.0511 )
 
-[node name="grass3" parent="." index="10" instance=ExtResource( 8 )]
+[node name="grass3" parent="." index="10" instance=ExtResource( 6 )]
 position = Vector2( 845.946, 285.551 )
 
-[node name="grass4" parent="." index="11" instance=ExtResource( 8 )]
+[node name="grass4" parent="." index="11" instance=ExtResource( 6 )]
 position = Vector2( 535.208, 361.446 )
 
 [node name="Skull" parent="." index="12" instance=ExtResource( 7 )]
@@ -57,7 +57,7 @@ position = Vector2( 168.623, 491.755 )
 [node name="Skull4" parent="." index="13" instance=ExtResource( 7 )]
 position = Vector2( 731.388, 498.915 )
 
-[node name="BlueBell" parent="." index="14" instance=ExtResource( 4 )]
+[node name="BlueBell" parent="." index="14" instance=ExtResource( 8 )]
 position = Vector2( 516.592, 511.803 )
 
 [node name="Player" parent="." index="15"]
