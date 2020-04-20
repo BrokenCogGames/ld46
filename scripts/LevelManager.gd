@@ -1,3 +1,3 @@
 extends Node
 
-var unlocked_levels = 1
+var unlocked_levels = 8

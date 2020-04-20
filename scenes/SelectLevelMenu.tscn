@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/SelectLevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/main_background.png" type="Texture" id=2]
@@ -8,8 +8,18 @@
 [ext_resource path="res://assets/level-2-clicked.png" type="Texture" id=6]
 [ext_resource path="res://assets/level-3.png" type="Texture" id=7]
 [ext_resource path="res://assets/level-3-clicked.png" type="Texture" id=8]
-[ext_resource path="res://assets/back-button.png" type="Texture" id=9]
-[ext_resource path="res://assets/back-button-clicked.png" type="Texture" id=10]
+[ext_resource path="res://assets/level-4.png" type="Texture" id=9]
+[ext_resource path="res://assets/level-4-clicked.png" type="Texture" id=10]
+[ext_resource path="res://assets/level-5.png" type="Texture" id=11]
+[ext_resource path="res://assets/level-5-clicked.png" type="Texture" id=12]
+[ext_resource path="res://assets/level-6.png" type="Texture" id=13]
+[ext_resource path="res://assets/level-6-clicked.png" type="Texture" id=14]
+[ext_resource path="res://assets/level-7.png" type="Texture" id=15]
+[ext_resource path="res://assets/level-7-clicked.png" type="Texture" id=16]
+[ext_resource path="res://assets/level-8.png" type="Texture" id=17]
+[ext_resource path="res://assets/level-8-clicked.png" type="Texture" id=18]
+[ext_resource path="res://assets/back-button.png" type="Texture" id=19]
+[ext_resource path="res://assets/back-button-clicked.png" type="Texture" id=20]
 
 [node name="SelectLevelMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -58,12 +68,16 @@ level = 3
 [node name="LevelButton2" parent="CenterContainer/GridContainer" instance=ExtResource( 4 )]
 margin_left = 552.0
 margin_right = 732.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 level = 4
 locked = true
 
 [node name="LevelButton4" parent="CenterContainer/GridContainer" instance=ExtResource( 4 )]
 margin_top = 184.0
 margin_bottom = 364.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 level = 5
 locked = true
 
@@ -72,6 +86,8 @@ margin_left = 184.0
 margin_top = 184.0
 margin_right = 364.0
 margin_bottom = 364.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
 level = 6
 locked = true
 
@@ -80,6 +96,8 @@ margin_left = 368.0
 margin_top = 184.0
 margin_right = 548.0
 margin_bottom = 364.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
 level = 7
 locked = true
 
@@ -88,6 +106,8 @@ margin_left = 552.0
 margin_top = 184.0
 margin_right = 732.0
 margin_bottom = 364.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
 level = 8
 locked = true
 
@@ -97,6 +117,6 @@ margin_top = 17.0258
 margin_right = 66.4194
 margin_bottom = 67.0258
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

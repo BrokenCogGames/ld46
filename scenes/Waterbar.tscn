@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/waterbar-inside.png" type="Texture" id=3]
 
 [node name="Waterbar" type="Node2D"]
+modulate = Color( 1, 1, 1, 0.74902 )
 script = ExtResource( 1 )
 
 [node name="Outside" type="TextureRect" parent="."]
