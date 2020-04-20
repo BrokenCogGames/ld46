@@ -9,6 +9,8 @@ var on_raft: bool = false
 var alive: bool = true
 var raft_entity: Raft = null
 var invincible: bool = false
+var in_water_counter: int = 0
+var in_water_max_count: int = 4
 
 # Player movement speed
 export var deceleration = .5
@@ -132,8 +134,11 @@ func _on_TickCounter_timeout():
 			$Waterbar.current_water += water_per_decisecond
 	
 	if in_water == true and on_raft == false and alive == true:
-		print("You drowned")
-		alive = false
+		in_water_counter += 1
+		if in_water_counter >= in_water_max_count:
+			alive = false
+	else:
+		in_water_counter = 0
 	
 	var bodies = $SquishArea.get_overlapping_bodies()
 	for body in bodies:

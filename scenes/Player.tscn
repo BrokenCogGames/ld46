@@ -285,7 +285,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 2.55962, 4.15707 )
+extents = Vector2( 1.2505, 3.09124 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 28.0485, 39.6613 )
@@ -300,7 +300,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 11
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 9.0
@@ -322,7 +322,7 @@ autostart = true
 [node name="DetectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
-position = Vector2( 0, 30 )
+position = Vector2( 0, -18 )
 shape = ExtResource( 3 )
 
 [node name="stung_wait" type="Timer" parent="."]
@@ -334,13 +334,13 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetectArea"]
-position = Vector2( -0.00729942, 3.86393 )
+position = Vector2( 1.02, 33.283 )
 shape = SubResource( 7 )
 
 [node name="SquishArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquishArea"]
-position = Vector2( 0, 7.22723 )
+position = Vector2( 0, 7.12141 )
 shape = SubResource( 8 )
 
 [node name="WateringSoundFX" type="AudioStreamPlayer2D" parent="."]
