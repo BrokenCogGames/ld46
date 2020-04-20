@@ -13,8 +13,8 @@ var in_water_counter: int = 0
 var in_water_max_count: int = 4
 
 # Player movement speed
-export var deceleration = .5
-export var acceleration = .8
+export var deceleration = 3
+export var acceleration = 3
 export var top_speed = 3
 
 var current_velocity = Vector2()
@@ -31,9 +31,13 @@ func _input(event):
 
 func input():
 	var input = Vector2()
-	var is_moving = false
-	if Input.is_action_pressed('ui_right') or Input.is_action_pressed('ui_left') or Input.is_action_pressed('ui_up') or Input.is_action_pressed('ui_down'):
-		is_moving = true
+	var is_moving_horizontally = false
+	var is_moving_vertically= false
+	if Input.is_action_pressed('ui_right') or Input.is_action_pressed('ui_left'):
+		is_moving_horizontally = true
+	
+	if Input.is_action_pressed('ui_up') or Input.is_action_pressed('ui_down'):
+		is_moving_vertically = true
 		
 	if current_velocity != Vector2(0,0):
 		# Physically moving
@@ -61,7 +65,7 @@ func input():
 		current_direction_y = 1
 
 	# If we aren't moving intentionally but we're still sliding, we start to decelerate.
-	if is_moving == false and (current_velocity.x != 0 or current_velocity.y != 0):
+	if is_moving_horizontally == false and (current_velocity.x != 0 or current_velocity.y != 0):
 		if current_direction_x == -1:
 			current_velocity.x += deceleration
 			if current_velocity.x > 0:
@@ -70,6 +74,8 @@ func input():
 			current_velocity.x -= deceleration
 			if current_velocity.x < 0:
 				current_velocity.x = 0
+	
+	if is_moving_vertically == false and (current_velocity.x != 0 or current_velocity.y != 0):
 		if current_direction_y == -1:
 			current_velocity.y += deceleration
 			if current_velocity.y > 0:
@@ -107,6 +113,17 @@ func _physics_process(delta):
 	if position.x < 0 or position.x > get_viewport_rect().size.x or position.y < 0 or position.y > get_viewport_rect().size.y:
 		print("You left map")
 		alive = false
+
+	if raft_entity != null:
+		current_velocity += raft_entity.velocity
+	if current_velocity.x > top_speed:
+		current_velocity.x = top_speed
+	if current_velocity.y > top_speed:
+		current_velocity.y = top_speed
+	if current_velocity.x < -top_speed:
+		current_velocity.x = -top_speed
+	if current_velocity.y < -top_speed:
+		current_velocity.y = -top_speed
 
 	move_and_collide(current_velocity)
 
