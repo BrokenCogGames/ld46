@@ -3,7 +3,7 @@ extends Node2D
 onready var inside = get_node("Outside/Inside")
 
 # max_water
-export(int) var max_water = 100 setget max_water_set, max_water_get
+export(int) var max_water = 240 setget max_water_set, max_water_get
 
 func max_water_set(new_value):
 	max_water = new_value

@@ -5,4 +5,4 @@ func _ready():
 	$Waterbar.current_water_set(100)
 	drain_per_tick = 4
 	aphid_drain_multiplier = 1.5
-	watering_rate = 15.0
+	watering_rate = 35.0

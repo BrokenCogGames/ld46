@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var water_per_decisecond = 5
+export var water_per_decisecond = 6
 
 var spigot
 var stung: bool = false
