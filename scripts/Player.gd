@@ -124,7 +124,7 @@ func _on_TickCounter_timeout():
 			# Check to see if we are by a plant
 			var plant := body as Plant
 			if plant != null:
-				var applied_water = min($Waterbar.current_water, 5)
+				var applied_water = min($Waterbar.current_water, plant.watering_rate/10)
 				plant.add_water(applied_water)
 				$Waterbar.current_water -= applied_water
 				if applied_water > 0 and $WateringSoundFX.playing == false:
