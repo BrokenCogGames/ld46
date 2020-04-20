@@ -56,8 +56,8 @@ margin_right = 207.626
 margin_bottom = 112.296
 custom_fonts/font = SubResource( 1 )
 text = "1:23"
-[connection signal="timeout" from="GoalTimer" to="." method="_on_GoalTimer_timeout"]
 
 [node name="AphidSpawnTimer" type="Timer" parent="."]
 autostart = true
+[connection signal="timeout" from="GoalTimer" to="." method="_on_GoalTimer_timeout"]
 [connection signal="timeout" from="AphidSpawnTimer" to="." method="_on_AphidSpawnTimer_timeout"]
