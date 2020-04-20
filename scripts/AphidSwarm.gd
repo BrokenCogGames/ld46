@@ -42,4 +42,4 @@ func _on_Timer_timeout():
 	for body in bodies:
 		var plant := body as Plant
 		if plant != null:
-			plant.drain_water(plant.drain_per_tick)
+			plant.drain_water(plant.drain_per_tick * (plant.aphid_drain_multiplier-1))
