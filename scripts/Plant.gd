@@ -2,6 +2,7 @@ class_name Plant
 extends StaticBody2D
 
 export var drain_per_tick = 2
+export var aphid_drain_multiplier = 1.5
 var alive: bool = true
 
 func _ready():
