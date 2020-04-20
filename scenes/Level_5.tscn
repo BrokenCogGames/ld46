@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilesets/outside.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/LillyOfTheValley.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Sunflower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=7]
 
@@ -52,17 +52,14 @@ position = Vector2( 841.65, 80.779 )
 [node name="Rose" parent="." index="12" instance=ExtResource( 3 )]
 position = Vector2( 847.226, 491.543 )
 
-[node name="Rose2" parent="." index="13" instance=ExtResource( 3 )]
-position = Vector2( 769.08, 315.424 )
+[node name="RoseBush" parent="." index="13" instance=ExtResource( 5 )]
+position = Vector2( 157.167, 107.987 )
 
-[node name="BlueBell" parent="." index="14" instance=ExtResource( 4 )]
-position = Vector2( 153.246, 124.142 )
+[node name="Sunflower" parent="." index="14" instance=ExtResource( 4 )]
+position = Vector2( 152.871, 518.963 )
 
-[node name="LillyOfTheValley" parent="." index="15" instance=ExtResource( 5 )]
-position = Vector2( 142.748, 497.375 )
-
-[node name="Spigot" parent="." index="16"]
+[node name="Spigot" parent="." index="15"]
 position = Vector2( 895.025, 113.375 )
 
-[node name="Player" parent="." index="17"]
+[node name="Player" parent="." index="16"]
 position = Vector2( 803.015, 172.443 )

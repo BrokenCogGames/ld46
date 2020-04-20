@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Level_1.gd" type="Script" id=2]
-[ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Sunflower.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/LillyOfTheValley.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/WaspSwarmLine.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=10]
@@ -39,28 +36,13 @@ position = Vector2( 616.584, 475.934 )
 [node name="grass6" parent="." index="9" instance=ExtResource( 10 )]
 position = Vector2( 777.23, 155.545 )
 
-[node name="BlueBell" parent="." index="10" instance=ExtResource( 3 )]
-position = Vector2( 259.008, 319.068 )
-
-[node name="Rose" parent="." index="11" instance=ExtResource( 4 )]
-position = Vector2( 521.045, 405.296 )
-
-[node name="RoseBush" parent="." index="12" instance=ExtResource( 5 )]
-position = Vector2( 533.021, 174.876 )
-
-[node name="Sunflower" parent="." index="13" instance=ExtResource( 6 )]
-position = Vector2( 738.052, 403.859 )
-
-[node name="LillyOfTheValley" parent="." index="14" instance=ExtResource( 7 )]
-position = Vector2( 327.511, 451.284 )
-
-[node name="Spigot" parent="." index="15"]
+[node name="Spigot" parent="." index="10"]
 position = Vector2( 650.448, 244.555 )
 
-[node name="Player" parent="." index="16"]
+[node name="Player" parent="." index="11"]
 position = Vector2( 439.859, 312.486 )
 
-[node name="Skull" parent="." index="18" instance=ExtResource( 9 )]
+[node name="Skull" parent="." index="13" instance=ExtResource( 9 )]
 position = Vector2( 921.271, 300.823 )
 
 [node name="WinPopup" parent="Canvas" index="1"]
@@ -69,5 +51,11 @@ margin_top = 118.324
 margin_right = 813.27
 margin_bottom = 526.324
 
-[node name="WaspSwarmLine" parent="." index="21" instance=ExtResource( 8 )]
+[node name="WaspSwarmLine" parent="." index="16" instance=ExtResource( 8 )]
 position = Vector2( 277.001, 208 )
+
+[node name="RoseBush" parent="." index="17" instance=ExtResource( 5 )]
+position = Vector2( 200.95, 281.95 )
+
+[node name="GrapeVine" parent="." index="18" instance=ExtResource( 3 )]
+position = Vector2( 462.201, 440.601 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://tilesets/outside.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/BlueBell.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/LillyOfTheValley.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Rose.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/RaftSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=8]
@@ -50,30 +50,28 @@ position = Vector2( 177.018, 143.689 )
 [node name="grass6" parent="." index="11" instance=ExtResource( 8 )]
 position = Vector2( 891.497, 445.158 )
 
-[node name="BlueBell" parent="." index="12" instance=ExtResource( 3 )]
-position = Vector2( 93.247, 118.981 )
+[node name="Rose" parent="." index="12" instance=ExtResource( 5 )]
+position = Vector2( 426, 408.862 )
+scale = Vector2( 0.64, 0.64 )
 
 [node name="BlueBell2" parent="." index="13" instance=ExtResource( 3 )]
-position = Vector2( 95.463, 537.817 )
+position = Vector2( 109.459, 520.322 )
 
 [node name="LillyOfTheValley" parent="." index="14" instance=ExtResource( 4 )]
-position = Vector2( 899.895, 563.302 )
+position = Vector2( 880.067, 85.0977 )
 
-[node name="RoseBush" parent="." index="15" instance=ExtResource( 5 )]
-position = Vector2( 896.571, 72.4433 )
-
-[node name="Spigot" parent="." index="16"]
+[node name="Spigot" parent="." index="15"]
 position = Vector2( 550.415, 299.129 )
 
-[node name="RaftSpawner" parent="." index="17" instance=ExtResource( 6 )]
+[node name="RaftSpawner" parent="." index="16" instance=ExtResource( 6 )]
 start_position = Vector2( 287, -70 )
 end_position = Vector2( 287, 709 )
 speed = 68.0
 
-[node name="RaftSpawner2" parent="." index="18" instance=ExtResource( 6 )]
+[node name="RaftSpawner2" parent="." index="17" instance=ExtResource( 6 )]
 start_position = Vector2( 737, 710 )
 end_position = Vector2( 737, -70 )
 speed = 68.0
 
-[node name="Player" parent="." index="19"]
+[node name="Player" parent="." index="18"]
 position = Vector2( 483.093, 291.931 )

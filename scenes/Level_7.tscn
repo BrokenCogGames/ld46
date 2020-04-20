@@ -71,7 +71,7 @@ end_position = Vector2( 1035, 358 )
 speed = 160.0
 
 [node name="Spigot" parent="." index="18"]
-position = Vector2( 189.306, 505.154 )
+position = Vector2( 173.554, 506.586 )
 
 [node name="Player" parent="." index="19"]
 position = Vector2( 90.1936, 500.888 )
