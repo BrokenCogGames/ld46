@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Level_1.gd" type="Script" id=2]
-[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/RoseBush.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/skull_bob.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/GrapeVine.tscn" type="PackedScene" id=6]
 
 [node name="Level_1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -17,22 +17,22 @@ song = 1
 format = 1
 tile_data = PoolIntArray( 262152, 41, 0, 262153, 44, 0, 262154, 44, 0, 262155, 45, 0, 327684, 41, 0, 327685, 44, 0, 327686, 44, 0, 327687, 44, 0, 327688, 49, 0, 327689, 10, 0, 327690, 10, 0, 327691, 51, 0, 327692, 45, 0, 393220, 42, 0, 393221, 10, 0, 393222, 52, 0, 393223, 48, 0, 393224, 48, 0, 393225, 48, 0, 393226, 50, 0, 393227, 10, 0, 393228, 51, 0, 393229, 45, 0, 458756, 42, 0, 458757, 10, 0, 458758, 46, 0, 458762, 43, 0, 458763, 50, 0, 458764, 10, 0, 458765, 46, 0, 524292, 43, 0, 524293, 48, 0, 524294, 47, 0, 524299, 43, 0, 524300, 48, 0, 524301, 47, 0 )
 
-[node name="grass" parent="." index="4" instance=ExtResource( 10 )]
+[node name="grass" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 200.531, 393.806 )
 
-[node name="grass2" parent="." index="5" instance=ExtResource( 10 )]
+[node name="grass2" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 184.286, 189.84 )
 
-[node name="grass3" parent="." index="6" instance=ExtResource( 10 )]
+[node name="grass3" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 384.641, 176.303 )
 
-[node name="grass4" parent="." index="7" instance=ExtResource( 10 )]
+[node name="grass4" parent="." index="7" instance=ExtResource( 3 )]
 position = Vector2( 561.532, 299.043 )
 
-[node name="grass5" parent="." index="8" instance=ExtResource( 10 )]
+[node name="grass5" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 616.584, 475.934 )
 
-[node name="grass6" parent="." index="9" instance=ExtResource( 10 )]
+[node name="grass6" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 777.23, 155.545 )
 
 [node name="Spigot" parent="." index="10"]
@@ -41,7 +41,7 @@ position = Vector2( 650.448, 244.555 )
 [node name="Player" parent="." index="11"]
 position = Vector2( 439.859, 312.486 )
 
-[node name="Skull" parent="." index="13" instance=ExtResource( 9 )]
+[node name="Skull" parent="." index="13" instance=ExtResource( 4 )]
 position = Vector2( 921.271, 300.823 )
 
 [node name="WinPopup" parent="Canvas" index="1"]
@@ -53,5 +53,5 @@ margin_bottom = 526.324
 [node name="RoseBush" parent="." index="16" instance=ExtResource( 5 )]
 position = Vector2( 200.95, 281.95 )
 
-[node name="GrapeVine" parent="." index="17" instance=ExtResource( 3 )]
+[node name="GrapeVine" parent="." index="17" instance=ExtResource( 6 )]
 position = Vector2( 462.201, 440.601 )

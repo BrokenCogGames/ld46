@@ -26,7 +26,7 @@ func win():
 	$Canvas/WinPopup.show()
 
 func beat_game():
-	pass
+	get_tree().change_scene("res://scenes/Credits.tscn")
 
 func _on_AphidSpawnTimer_timeout():
 	aphid_tick_count += 1
